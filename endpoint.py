@@ -5,6 +5,9 @@ import datetime
 app = Flask(__name__)
 
 slack_name = "SamG1"
+github_file = "https://github.com/sammygeze15/intern0/edit/main/endpoint.py"
+github_repo = "https://github.com/sammygeze15/intern0"
+track = "Backend"
 
 @app.route('/getit', methods=['GET'])
 
@@ -30,9 +33,10 @@ def getit():
         'slack_name': slack_name,
         'current_day': current_day,
         'current_utc_time': current_time_utc.strftime('%Y-%m-%d %H:%M:%S UTC'),
-        
-        'status_code': 200,
-        'time_validation': time_validation
+        'github_file': github_file,
+        'github_repo': github_repo,
+        'track': track,
+        'status_code': 200
     }
     return jsonify(response)
 
